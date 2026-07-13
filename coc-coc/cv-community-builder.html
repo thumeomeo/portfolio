@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Nguyễn Minh Thư — Community Builder Intern</title>
+<!-- ═════════════════════════════════════════════════════════════
+     CV 02 — Community Builder Intern @ ScoreX (Cốc Cốc ecosystem)
+     Song ngữ EN/VI — bấm nút góc phải để chuyển.
+     IN PDF: chọn ngôn ngữ → Ctrl+P → Save as PDF
+             → More settings: Margins = None, Background graphics = ON
+     Sửa nội dung: tìm [EDIT] trong file.
+     ═════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141414;
+    --muted:#55554F;
+    --accent:#4338E0;
+    --line:#E2E2DC;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:#EDEDE8;color:var(--ink);-webkit-font-smoothing:antialiased}
+
+  body.lang-en .vi{display:none}
+  body.lang-vi .en{display:none}
+
+  .toolbar{
+    position:sticky;top:0;z-index:10;background:#141414;color:#fff;
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    padding:10px 16px;font-size:12.5px;flex-wrap:wrap;
+  }
+  .toolbar button{
+    font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer;
+    padding:6px 16px;border-radius:99px;border:1px solid #555;background:transparent;color:#bbb;
+  }
+  .toolbar button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+  .toolbar .print-btn{background:#fff;color:#141414;border-color:#fff}
+  .toolbar .hint{color:#999}
+  @media print{.toolbar{display:none}}
+
+  .page{
+    width:210mm;min-height:297mm;margin:18px auto;background:#fff;
+    padding:13mm 14mm;box-shadow:0 10px 40px rgba(0,0,0,.12);
+    font-size:9.4pt;line-height:1.5;
+  }
+  @media print{
+    body{background:#fff}
+    .page{margin:0;box-shadow:none;min-height:auto}
+    @page{size:A4;margin:0}
+  }
+
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;border-bottom:2.5px solid var(--ink);padding-bottom:12px}
+  .head h1{font-size:24pt;font-weight:800;letter-spacing:-.04em;line-height:1.05}
+  .head .role{font-size:10.5pt;font-weight:600;color:var(--accent);margin-top:4px}
+  .head .contact{text-align:right;font-size:8.2pt;color:var(--muted);line-height:1.75;flex-shrink:0}
+  .head .contact a{color:var(--ink);text-decoration:none;font-weight:600}
+
+  .cols{display:grid;grid-template-columns:1fr 62mm;gap:9mm;margin-top:8mm}
+  h2{
+    font-size:8pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);border-bottom:1px solid var(--line);
+    padding-bottom:4px;margin:7mm 0 3.5mm;
+  }
+  .col-main > h2:first-child, .col-side > h2:first-child{margin-top:0}
+
+  p.obj{font-size:9.4pt;color:var(--muted)}
+  p.obj b{color:var(--ink)}
+
+  .job{margin-bottom:4.5mm}
+  .job .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+  .job h3{font-size:10pt;font-weight:700;letter-spacing:-.01em}
+  .job .date{font-size:8pt;font-weight:600;color:var(--muted);white-space:nowrap}
+  .job .org{font-size:8.6pt;font-weight:500;color:var(--accent);margin:1px 0 4px}
+  .job ul{list-style:none}
+  .job li{position:relative;padding-left:11px;font-size:8.8pt;color:var(--muted);margin-bottom:2px}
+  .job li::before{content:"–";position:absolute;left:0;color:var(--accent)}
+  .job li b{color:var(--ink);font-weight:600}
+
+  .side-block{margin-bottom:4mm}
+  .side-block h3{font-size:9pt;font-weight:700}
+  .side-block .sub{font-size:8.2pt;color:var(--muted)}
+  .skill-group{margin-bottom:3mm}
+  .skill-group b{display:block;font-size:8.4pt;font-weight:700;margin-bottom:1px}
+  .skill-group span{font-size:8.4pt;color:var(--muted)}
+  .lang-row{display:flex;justify-content:space-between;font-size:8.6pt;padding:2.5px 0;border-bottom:1px dashed var(--line)}
+  .lang-row span{color:var(--muted)}
+  .edit-note{color:#B45309;background:#FEF3C7;font-size:8pt;padding:1px 4px;border-radius:3px}
+</style>
+</head>
+<body class="lang-vi">
+
+<div class="toolbar">
+  <span>Language / Ngôn ngữ:</span>
+  <button id="btn-en" onclick="setLang('en')">English</button>
+  <button id="btn-vi" class="active" onclick="setLang('vi')">Tiếng Việt</button>
+  <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+  <span class="hint">Ctrl+P → Margins: None · Background graphics: ON</span>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="head">
+    <div>
+      <h1>NGUYỄN MINH THƯ</h1>
+      <div class="role">
+        <span class="en">Community Builder Intern</span>
+        <span class="vi">Thực tập sinh Community Builder</span>
+      </div>
+    </div>
+    <div class="contact">
+      <!-- [EDIT] tạo email mới dạng họ tên rồi thay tại đây -->
+      onghoaleulis@gmail.com<br>
+      0879 130 613 · Zalo: 0859 130 613<br>
+      <span class="en">Cầu Giấy, Hanoi · DOB: 20/04/2005</span>
+      <span class="vi">Cầu Giấy, Hà Nội · Sinh: 20/04/2005</span><br>
+      <a href="https://www.linkedin.com/in/minh-th%C6%B0-nguy%E1%BB%85n-95a494408/">LinkedIn: minh-thư-nguyễn</a> ·
+      <a href="#">Portfolio: <span class="edit-note">[EDIT link]</span></a>
+    </div>
+  </div>
+
+  <div class="cols">
+    <!-- ══ MAIN COLUMN ══ -->
+    <div class="col-main">
+
+      <h2><span class="en">Objective</span><span class="vi">Mục tiêu nghề nghiệp</span></h2>
+      <p class="obj">
+        <span class="en">
+          Final-year student at ULIS – VNU Hanoi with experience across <b>three English-education
+          environments</b> (kindergarten, corporate training, IELTS center) and a daily user of
+          Facebook Groups, Zalo, TikTok and Discord. Seeking the Community Builder internship at
+          ScoreX to build an engaged learner community that <b>drives real conversion</b> — and to
+          grow long-term with the team.
+        </span>
+        <span class="vi">
+          Sinh viên năm cuối ULIS – ĐHQGHN, có kinh nghiệm tại <b>3 môi trường giáo dục tiếng Anh</b>
+          (mầm non, đào tạo doanh nghiệp, trung tâm IELTS), sử dụng Facebook Groups, Zalo, TikTok,
+          Discord mỗi ngày. Mong muốn thực tập Community Builder tại ScoreX để xây dựng cộng đồng
+          học viên gắn kết, <b>đóng góp trực tiếp vào chuyển đổi</b> — và phát triển lâu dài cùng team.
+        </span>
+      </p>
+
+      <h2><span class="en">Work Experience</span><span class="vi">Kinh nghiệm làm việc</span></h2>
+
+      <div class="job">
+        <div class="top">
+          <h3>Marketing Accountant</h3>
+          <span class="date">2026 – <span class="en">present</span><span class="vi">nay</span></span>
+        </div>
+        <div class="org">Techies Lab — techieslab.app</div>
+        <ul>
+          <li><span class="en">Track and reconcile <b>marketing budget &amp; campaign spending</b> across channels; prepare spending reports</span>
+              <span class="vi">Theo dõi, đối soát <b>ngân sách marketing &amp; chi phí chiến dịch</b> theo từng kênh; lập báo cáo chi tiêu</span></li>
+          <li><span class="en">Coordinate with the content &amp; growth team on campaigns for the product landing page</span>
+              <span class="vi">Phối hợp team content &amp; growth triển khai chiến dịch cho landing page sản phẩm</span></li>
+          <li><span class="en"><span class="edit-note">[EDIT]</span> Add 1 concrete number if possible: budget size, number of channels, tools used…</span>
+              <span class="vi"><span class="edit-note">[EDIT]</span> Thêm 1 con số cụ thể nếu có: quy mô ngân sách, số kênh, công cụ sử dụng…</span></li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="top">
+          <h3><span class="en">Telesales &amp; Data Assistant</span><span class="vi">Nhân viên Sales &amp; Xử lý dữ liệu</span></h3>
+          <span class="date">02/2026 – 05/2026</span>
+        </div>
+        <div class="org">EASYIELTS — Hybrid IELTS Center (HOCMAI × GALAXY Education)</div>
+        <ul>
+          <li><span class="en">Consulted &amp; supported IELTS learners by phone — <b>first-hand insight into learner worries and behavior</b></span>
+              <span class="vi">Tư vấn &amp; chăm sóc học viên IELTS qua điện thoại — <b>nắm trực tiếp nỗi lo và hành vi người học</b></span></li>
+          <li><span class="en">Managed customer data and <b>tracked operational performance metrics</b></span>
+              <span class="vi">Quản lý dữ liệu học viên, <b>theo dõi chỉ số hiệu suất vận hành</b></span></li>
+          <li><span class="en">Ran follow-ups that <b>supported enrollment and conversion</b></span>
+              <span class="vi">Chăm sóc follow-up, <b>hỗ trợ tuyển sinh và chuyển đổi</b></span></li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="top">
+          <h3><span class="en">Teaching Assistant — Business English Program</span><span class="vi">Trợ giảng — Chương trình Tiếng Anh Thương mại</span></h3>
+          <span class="date">2025</span>
+        </div>
+        <div class="org"><span class="en">Educa — training program for Viettel Networks staff</span><span class="vi">Educa — chương trình đào tạo nhân sự Viettel Networks</span></div>
+        <ul>
+          <li><span class="en">Supported English training for <b>busy working professionals</b>; helped keep weekly motivation high</span>
+              <span class="vi">Hỗ trợ đào tạo tiếng Anh cho <b>người đi làm bận rộn</b>; góp phần "giữ nhiệt" động lực học mỗi tuần</span></li>
+          <li><span class="en">Coordinated classes with instructors; gave <b>individual communication feedback</b></span>
+              <span class="vi">Phối hợp giảng viên vận hành lớp; đưa <b>phản hồi kỹ năng giao tiếp</b> cho từng học viên</span></li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="top">
+          <h3><span class="en">Sales Collaborator</span><span class="vi">Cộng tác viên bán hàng</span></h3>
+          <span class="date">2024 – 2025</span>
+        </div>
+        <div class="org"><span class="en">Hanoi University of Education Bookstore</span><span class="vi">Nhà sách Đại học Sư phạm Hà Nội</span></div>
+        <ul>
+          <li><span class="en">Served customers (mostly <b>students and parents</b>); handled daily operations</span>
+              <span class="vi">Bán hàng, hỗ trợ khách (chủ yếu <b>sinh viên, phụ huynh</b>); vận hành hoạt động thường ngày</span></li>
+          <li><span class="en">Organized learning materials and inventory records</span>
+              <span class="vi">Quản lý học liệu và dữ liệu kho</span></li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="top">
+          <h3><span class="en">Teaching Assistant</span><span class="vi">Trợ giảng</span></h3>
+          <span class="date">11/2023</span>
+        </div>
+        <div class="org"><span class="en">Popodoo Kindergarten</span><span class="vi">Mầm non Popodoo</span></div>
+        <ul>
+          <li><span class="en">Designed and ran <b>language mini-games</b> that kept young learners engaged</span>
+              <span class="vi">Thiết kế và tổ chức <b>mini-game ngôn ngữ</b> giữ tương tác cho trẻ</span></li>
+          <li><span class="en">Prepared visual learning materials (flashcards, posters)</span>
+              <span class="vi">Chuẩn bị học liệu trực quan (flashcard, tranh ảnh)</span></li>
+        </ul>
+      </div>
+
+      <h2><span class="en">Projects</span><span class="vi">Dự án đang tham gia</span></h2>
+
+      <div class="job">
+        <div class="top"><h3>Antibot — <span class="en">SaaS landing page</span><span class="vi">Landing page SaaS</span></h3><span class="date">2026</span></div>
+        <ul>
+          <li><span class="en"><span class="edit-note">[EDIT]</span> Describe your role in content &amp; marketing for the product landing page</span>
+              <span class="vi"><span class="edit-note">[EDIT]</span> Mô tả vai trò của bạn trong nội dung &amp; marketing cho landing page sản phẩm</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ══ SIDE COLUMN ══ -->
+    <div class="col-side">
+
+      <h2><span class="en">Education</span><span class="vi">Học vấn</span></h2>
+      <div class="side-block">
+        <h3><span class="en">ULIS — Vietnam National University, Hanoi</span><span class="vi">Trường Đại học Ngoại ngữ — ĐHQG Hà Nội (ULIS)</span></h3>
+        <div class="sub">
+          <span class="en">B.A. in Russian Language &amp; Culture<br>2023 – 2027 (expected)</span>
+          <span class="vi">Cử nhân Ngôn ngữ Nga và Văn hóa Nga<br>2023 – 2027 (dự kiến)</span>
+        </div>
+      </div>
+
+      <h2><span class="en">Platforms</span><span class="vi">Nền tảng MXH</span></h2>
+      <div class="skill-group">
+        <span class="en">Facebook Groups · Zalo · TikTok · Discord · Threads — <b>active daily user</b></span>
+        <span class="vi">Facebook Groups · Zalo · TikTok · Discord · Threads — <b>sử dụng tích cực mỗi ngày</b></span>
+      </div>
+
+      <h2><span class="en">Skills</span><span class="vi">Kỹ năng</span></h2>
+      <div class="skill-group">
+        <b><span class="en">Content</span><span class="vi">Nội dung</span></b>
+        <span class="en">Knowledge-sharing posts · Mini-game ideas · Canva · CapCut (mobile video)</span>
+        <span class="vi">Bài chia sẻ kiến thức · Ý tưởng mini-game · Canva · CapCut (video điện thoại)</span>
+      </div>
+      <div class="skill-group">
+        <b><span class="en">AI Tools</span><span class="vi">Công cụ AI</span></b>
+        <span class="en">ChatGPT · Claude (Code, Cowork, Design) — content &amp; workflow support</span>
+        <span class="vi">ChatGPT · Claude (Code, Cowork, Design) — hỗ trợ nội dung &amp; công việc</span>
+      </div>
+      <div class="skill-group">
+        <b><span class="en">Office</span><span class="vi">Tin học văn phòng</span></b>
+        <span class="en">Microsoft Office (Word, Excel, PowerPoint) · Google Workspace (Docs, Sheets, Slides)</span>
+        <span class="vi">Microsoft Office (Word, Excel, PowerPoint) · Google Workspace (Docs, Sheets, Slides)</span>
+      </div>
+      <div class="skill-group">
+        <b><span class="en">Soft skills</span><span class="vi">Kỹ năng mềm</span></b>
+        <span class="en">Listening &amp; communication · Persistence &amp; initiative · Teamwork</span>
+        <span class="vi">Lắng nghe &amp; giao tiếp · Kiên trì, chủ động · Làm việc nhóm</span>
+      </div>
+
+      <h2><span class="en">Languages</span><span class="vi">Ngoại ngữ</span></h2>
+      <div class="lang-row"><b><span class="en">Vietnamese</span><span class="vi">Tiếng Việt</span></b><span><span class="en">Native</span><span class="vi">Bản ngữ</span></span></div>
+      <div class="lang-row"><b><span class="en">English</span><span class="vi">Tiếng Anh</span></b><span><span class="en">Good communication</span><span class="vi">Giao tiếp tốt</span></span></div>
+      <div class="lang-row"><b><span class="en">Russian</span><span class="vi">Tiếng Nga</span></b><span><span class="en">Advanced (major)</span><span class="vi">Nâng cao (chuyên ngành)</span></span></div>
+
+      <h2><span class="en">Availability</span><span class="vi">Thời gian làm việc</span></h2>
+      <div class="side-block">
+        <div class="sub">
+          <!-- [EDIT] JD hỏi rõ part-time 22h/tuần hay full-time 44h/tuần — điền trước khi nộp, VD:
+               "Part-time 22h/tuần, linh hoạt ca Sáng – Chiều – Tối" -->
+          <span class="edit-note">[EDIT — <span class="en">part-time 22h or full-time 44h? fill before submitting</span><span class="vi">part-time 22h hay full-time 44h? điền trước khi nộp</span>]</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-' + l;
+    document.getElementById('btn-en').classList.toggle('active', l==='en');
+    document.getElementById('btn-vi').classList.toggle('active', l==='vi');
+    document.documentElement.lang = l;
+  }
+</script>
+</body>
+</html>

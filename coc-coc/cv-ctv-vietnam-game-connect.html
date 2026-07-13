@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV - Nguyễn Minh Thư</title>
+<!-- ═════════════════════════════════════════════════════════════
+     CV 03 - CTV Sự kiện (Vietnam Game Connect 2026)
+     ⚠️ FORM YÊU CẦU ẢNH RÕ MẶT - bấm vào ô ảnh để tải ảnh từ máy.
+     IN PDF: Ctrl+P → Margins: None · Background graphics: ON
+     ═════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141414;
+    --muted:#55554F;
+    --accent:#D9480F;
+    --line:#E2E2DC;
+    --link:#0A66C2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:#EDEDE8;color:var(--ink);-webkit-font-smoothing:antialiased}
+
+  .toolbar{
+    position:sticky;top:0;z-index:10;background:#141414;color:#fff;
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    padding:10px 16px;font-size:12.5px;flex-wrap:wrap;
+  }
+  .toolbar .print-btn{
+    font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer;
+    padding:6px 16px;border-radius:99px;border:1px solid #fff;background:#fff;color:#141414;
+  }
+  .toolbar .warn{color:#FFC078;font-weight:600}
+  @media print{.toolbar,.no-print{display:none !important}}
+
+  .page{
+    width:210mm;min-height:297mm;margin:18px auto;background:#fff;
+    padding:8mm 12mm;box-shadow:0 10px 40px rgba(0,0,0,.12);
+    font-size:9.1pt;line-height:1.38;
+  }
+  .job,.skill-group,.lang-row{break-inside:avoid}
+  .two-col{break-inside:auto}
+  @media print{
+    body{background:#fff}
+    .page{margin:0;box-shadow:none;min-height:auto}
+    @page{size:A4;margin:0}
+  }
+
+  /* ── header: ảnh + thông tin + QR ── */
+  .head{display:flex;gap:6mm;align-items:flex-start;border-bottom:2.5px solid var(--ink);padding-bottom:2.5mm}
+  .photo-col{flex-shrink:0;text-align:center}
+  .photo{
+    width:32mm;height:42mm;border:1.5px dashed #C9944A;
+    background:#FEF7EC;display:flex;align-items:center;justify-content:center;
+    text-align:center;font-size:8pt;color:#B45309;line-height:1.55;padding:8px;
+    position:relative;cursor:pointer;overflow:hidden;
+  }
+  .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+  .photo.has-img{border:1px solid var(--line)}
+  .upload-btn{
+    display:inline-block;margin-top:2mm;font-size:8.5pt;font-weight:600;cursor:pointer;
+    color:#fff;background:var(--accent);padding:5px 14px;border-radius:99px;
+  }
+  .head-main{flex:1}
+  .head h1{font-size:20pt;font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-bottom:2mm}
+  .head .contact{font-size:8.4pt;color:var(--muted);line-height:1.6}
+  .head .contact b{color:var(--ink);font-weight:600}
+  a.live-link{color:var(--link);text-decoration:underline;font-weight:600;word-break:break-all}
+  .qr-col{flex-shrink:0;text-align:center;font-size:7.2pt;color:var(--muted);line-height:1.4}
+  .qr-col img{width:17mm;height:17mm;display:block;margin:0 auto 1.5mm;border:1px solid var(--line);padding:1mm;background:#fff}
+
+  h2{
+    font-size:8pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);border-bottom:1px solid var(--line);
+    padding-bottom:3px;margin:3mm 0 2mm;
+  }
+
+  .job{margin-bottom:2mm}
+  .job .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+  .job h3{font-size:9.4pt;font-weight:700;letter-spacing:-.01em}
+  .job h3 .en-title{font-weight:500;color:var(--muted)}
+  .job .date{font-size:8pt;font-weight:600;color:var(--muted);white-space:nowrap}
+  .job .org{font-size:8.4pt;font-weight:500;color:var(--accent);margin:1px 0 2px}
+  .job ul{list-style:none}
+  .job li{position:relative;padding-left:11px;font-size:8.6pt;color:var(--muted);margin-bottom:1px}
+  .job li::before{content:"-";position:absolute;left:0;color:var(--accent)}
+  .job li b{color:var(--ink);font-weight:600}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:7mm}
+  .skill-group{margin-bottom:1.6mm}
+  .skill-group b{display:inline;font-size:8.6pt;font-weight:700}
+  .skill-group b::after{content:": "}
+  .skill-group span{font-size:8.4pt;color:var(--muted)}
+  .lang-row{display:flex;justify-content:space-between;font-size:8.6pt;padding:2px 0;border-bottom:1px dashed var(--line)}
+  .lang-row span{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="warn">⚠️ Bấm vào ô ảnh (hoặc nút Tải ảnh) để chèn ảnh rõ mặt trước khi in!</span>
+  <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+  <span>Ctrl+P → Margins: None · Background graphics: ON</span>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="head">
+    <div class="photo-col">
+      <label class="photo" id="photoBox" title="Bấm để tải ảnh lên">
+        <span id="photoPlaceholder">[ẢNH RÕ MẶT]<br><br>Bấm vào đây<br>để tải ảnh từ máy<br><br>(form BTC bắt buộc)</span>
+        <img id="photoImg" alt="Ảnh CV">
+        <input type="file" accept="image/*" onchange="loadPhoto(event)" hidden>
+      </label>
+      <label class="upload-btn no-print">📷 Tải ảnh lên<input type="file" accept="image/*" onchange="loadPhoto(event)" hidden></label>
+    </div>
+    <div class="head-main">
+      <h1>NGUYỄN MINH THƯ</h1>
+      <div class="contact">
+        <b>SĐT:</b> 0879 130 613 · <b>Zalo:</b> 0859 130 613<br>
+        <!-- [EDIT] thay bằng email mới dạng họ tên nếu đã tạo -->
+        <b>Email:</b> onghoaleulis@gmail.com · <b>Ngày sinh:</b> 20/04/2005<br>
+        <b>Địa chỉ:</b> Cầu Giấy, Hà Nội<br>
+        <b>LinkedIn:</b> <a class="live-link" href="https://www.linkedin.com/in/minh-th%C6%B0-nguy%E1%BB%85n-95a494408/">linkedin.com/in/minh-thư-nguyễn</a>
+      </div>
+    </div>
+    <a class="qr-col" href="https://www.linkedin.com/in/minh-th%C6%B0-nguy%E1%BB%85n-95a494408/">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fminh-th%25C6%25B0-nguy%25E1%25BB%2585n-95a494408%2F" alt="QR LinkedIn">
+      Quét / bấm để mở<br>LinkedIn
+    </a>
+  </div>
+
+  <!-- KINH NGHIỆM SỰ KIỆN & HOẠT ĐỘNG NGOẠI KHÓA -->
+  <h2>Kinh nghiệm sự kiện &amp; Hoạt động ngoại khóa / Event Experience</h2>
+
+  <div class="job">
+    <div class="top"><h3>Đoàn đón Tổng thống Nga V. Putin thăm chính thức Việt Nam <span class="en-title">/ Welcoming delegation - Russian President's state visit</span></h3><span class="date">20/06/2024</span></div>
+    <ul>
+      <li>Tham gia đoàn đón tiếp theo <b>nghi thức lễ tân ngoại giao</b> - tác phong nghiêm túc, đúng giờ tuyệt đối, phối hợp theo điều phối của ban tổ chức</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="top"><h3>Câu lạc bộ Sự kiện ULIS <span class="en-title">/ ULIS Event Club - thành viên, sinh viên chính tổ chức</span></h3><span class="date">2023 - nay</span></div>
+    <div class="org">Trường Đại học Ngoại ngữ - ĐHQG Hà Nội &amp; Khoa Ngôn ngữ và Văn hóa Nga</div>
+    <ul>
+      <li>Sinh viên chính tổ chức các sự kiện lớn hàng năm: <b>Dạ hội "Từ Hà Nội đến Moskva"</b>, <b>Rung Chuông Vàng</b>, <b>ULIS Job Fair</b> - từ hậu cần, đón tiếp - phân luồng khách đến chạy chương trình theo kịch bản</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="top"><h3>Sự kiện của Đại sứ quán Nga tại Việt Nam &amp; Phân viện Puskin <span class="en-title">/ Events of the Russian Embassy &amp; Pushkin Institute</span></h3><span class="date">2023 - nay</span></div>
+    <ul>
+      <li>Tham gia các sự kiện văn hóa - đối ngoại quy mô lớn; quen môi trường <b>khách quốc tế và nghi thức trang trọng</b></li>
+    </ul>
+  </div>
+
+  <!-- KINH NGHIỆM LÀM VIỆC -->
+  <h2>Kinh nghiệm làm việc / Work Experience</h2>
+
+  <div class="job">
+    <div class="top"><h3>Marketing Accountant <span class="en-title">/ Phụ trách ngân sách Marketing</span></h3><span class="date">2026 - nay</span></div>
+    <div class="org">Techies Lab - techieslab.app (dự án sản phẩm công nghệ / tech product)</div>
+    <ul>
+      <li>Theo dõi, đối soát ngân sách &amp; chi phí chiến dịch marketing; phối hợp team content triển khai chiến dịch - <b>quen làm việc theo checklist, số liệu và deadline</b></li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="top"><h3>Nhân viên Sales &amp; Xử lý dữ liệu <span class="en-title">/ Telesales &amp; Data Assistant</span></h3><span class="date">02/2026 - 05/2026</span></div>
+    <div class="org">EASYIELTS - Trung tâm IELTS Hybrid / Hybrid IELTS Center (HOCMAI × GALAXY Education)</div>
+    <ul>
+      <li>Tư vấn &amp; chăm sóc học viên qua điện thoại; quản lý dữ liệu trên Google Sheets - <b>xử lý tình huống mỗi ngày, thao tác nhanh với danh sách, tra cứu thông tin khách</b></li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="top"><h3>Trợ giảng - Chương trình Tiếng Anh Thương mại <span class="en-title">/ Teaching Assistant - Business English Program</span></h3><span class="date">2025</span></div>
+    <div class="org">Educa - chương trình đào tạo nhân sự Viettel Networks / Training program for Viettel Networks staff</div>
+    <ul>
+      <li>Phối hợp giảng viên <b>vận hành các buổi đào tạo cho người đi làm</b> - đón tiếp, điểm danh, hậu cần lớp học; giao tiếp tiếng Anh trong môi trường doanh nghiệp</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="top"><h3>Trợ giảng <span class="en-title">/ Teaching Assistant</span></h3><span class="date">11/2023</span></div>
+    <div class="org">Mầm non Popodoo / Popodoo Kindergarten</div>
+    <ul>
+      <li>Tổ chức hoạt động, trò chơi ngôn ngữ - <b>điều phối nhóm đông, giữ không khí sôi nổi</b></li>
+    </ul>
+  </div>
+
+  <!-- 2 CỘT: HỌC VẤN + NGOẠI NGỮ | KỸ NĂNG -->
+  <div class="two-col">
+    <div>
+      <h2>Học vấn / Education</h2>
+      <div class="job">
+        <h3>Trường Đại học Ngoại ngữ - ĐHQG Hà Nội <span class="en-title">/ University of Languages and International Studies - VNU</span></h3>
+        <div class="org">Cử nhân Ngôn ngữ Nga và Văn hóa Nga · 2023 - 2027</div>
+      </div>
+      <h2>Ngoại ngữ / Languages</h2>
+      <div class="lang-row"><b>Tiếng Anh / English</b><span>Giao tiếp tốt</span></div>
+      <div class="lang-row"><b>Tiếng Nga / Russian</b><span>Nâng cao</span></div>
+    </div>
+    <div>
+      <h2>Kỹ năng / Skills</h2>
+      <div class="skill-group"><b>Lễ tân &amp; nghi thức đón tiếp</b><span>Tác phong protocol khi đón đoàn khách cấp cao, khách quốc tế; trang phục và cử chỉ chuẩn mực</span></div>
+      <div class="skill-group"><b>Check-in &amp; phân luồng khách</b><span>Tra cứu, đối soát danh sách nhanh trên Google Sheets/Excel; hướng dẫn khách rõ ràng, thân thiện</span></div>
+      <div class="skill-group"><b>Chạy chương trình theo kịch bản</b><span>Bám timeline, phối hợp nhiều bộ phận, báo cáo kịp thời cho điều phối viên</span></div>
+      <div class="skill-group"><b>Xử lý tình huống tại chỗ</b><span>Giữ bình tĩnh và thái độ tích cực khi đông khách hoặc phát sinh ngoài kịch bản</span></div>
+      <div class="skill-group"><b>Giao tiếp song ngữ</b><span>Hướng dẫn, cung cấp thông tin cho khách bằng tiếng Việt / tiếng Anh (thêm tiếng Nga khi cần)</span></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function loadPhoto(e){
+    const f = e.target.files && e.target.files[0];
+    if(!f) return;
+    const r = new FileReader();
+    r.onload = ev => {
+      const img = document.getElementById('photoImg');
+      img.src = ev.target.result;
+      img.style.display = 'block';
+      document.getElementById('photoPlaceholder').style.display = 'none';
+      document.getElementById('photoBox').classList.add('has-img');
+    };
+    r.readAsDataURL(f);
+  }
+</script>
+</body>
+</html>

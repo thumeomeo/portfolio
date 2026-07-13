@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nguyễn Minh Thư — Community Builder</title>
+<!-- ═════════════════════════════════════════════════════════════
+     PORTFOLIO 02 — Community Builder Intern
+     @ ScoreX (Cốc Cốc education ecosystem)
+     Sửa nội dung: tìm chữ [EDIT] trong file.
+     ═════════════════════════════════════════════════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FCFCFA;
+    --ink:#141414;
+    --muted:#6B6B66;
+    --accent:#4338E0;
+    --line:#E7E7E2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  ::selection{background:var(--accent);color:#fff}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(252,252,250,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .logo{font-weight:700;font-size:.98rem;letter-spacing:-.02em;text-decoration:none}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;gap:26px;list-style:none}
+  .nav-links a{text-decoration:none;font-size:.84rem;font-weight:500;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .badge{font-size:.72rem;font-weight:600;border:1px solid var(--ink);color:var(--ink);padding:7px 14px;border-radius:99px;text-decoration:none;white-space:nowrap;transition:all .2s}
+  .badge:hover{background:var(--ink);color:var(--bg)}
+  @media(max-width:840px){.nav-links{display:none}}
+
+  /* hero */
+  header{padding:110px 0 80px}
+  .kicker{font-size:.76rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:30px}
+  .kicker b{color:var(--accent)}
+  h1{font-size:clamp(2.6rem,6.6vw,4.8rem);font-weight:750;line-height:1.04;letter-spacing:-.04em;max-width:16ch}
+  h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+  .hero-sub{margin-top:30px;max-width:580px;color:var(--muted);font-size:1.05rem}
+  .hero-sub b{color:var(--ink);font-weight:600}
+  .hero-cta{margin-top:40px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:99px;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .2s}
+  .btn-solid{background:var(--ink);color:var(--bg)}
+  .btn-solid:hover{background:var(--accent)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink)}
+  .hero-meta{margin-top:56px;display:flex;flex-wrap:wrap;border-top:1px solid var(--line)}
+  .hero-meta > div{padding:20px 34px 0 0;margin-right:34px;font-size:.82rem;color:var(--muted)}
+  .hero-meta b{display:block;color:var(--ink);font-size:1.35rem;font-weight:700;letter-spacing:-.02em}
+
+  /* sections */
+  section{padding:84px 0;border-top:1px solid var(--line)}
+  .label{font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  .label i{font-style:normal;color:var(--accent);margin-right:10px}
+  h2{font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:700;letter-spacing:-.03em;margin-bottom:44px}
+
+  /* story */
+  .story-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start}
+  @media(max-width:840px){.story-grid{grid-template-columns:1fr}}
+  .story p{color:var(--muted);margin-bottom:16px;font-size:1rem}
+  .story p b{color:var(--ink);font-weight:600}
+  .story p em{color:var(--accent);font-style:italic}
+  .journey{border:1px solid var(--line);border-radius:6px;padding:28px}
+  .journey h3{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:22px;font-weight:600}
+  .j-step{display:flex;gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+  .j-step .n{font-size:.76rem;font-weight:600;color:var(--accent);padding-top:2px;flex-shrink:0}
+  .j-step b{display:block;font-size:.94rem;font-weight:600}
+  .j-step span{font-size:.8rem;color:var(--muted)}
+
+  /* experience rows */
+  .xp-row{display:grid;grid-template-columns:180px 1fr;gap:28px;padding:30px 0;border-bottom:1px solid var(--line)}
+  .xp-row:last-child{border-bottom:none}
+  @media(max-width:840px){.xp-row{grid-template-columns:1fr;gap:8px}}
+  .xp-date{font-size:.8rem;font-weight:600;color:var(--muted);padding-top:4px}
+  .xp-row h3{font-size:1.14rem;font-weight:700;letter-spacing:-.02em}
+  .xp-org{font-size:.86rem;color:var(--accent);font-weight:500;margin:2px 0 12px}
+  .xp-row ul{list-style:none}
+  .xp-row li{position:relative;padding-left:18px;margin-bottom:6px;font-size:.92rem;color:var(--muted)}
+  .xp-row li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+  .xp-row li b{color:var(--ink);font-weight:600}
+  .fit{margin-top:12px;font-size:.78rem;font-weight:500;color:var(--accent);border:1px solid #D9D6F8;background:#F4F3FE;padding:7px 12px;border-radius:4px;display:inline-block}
+
+  /* ideas */
+  .idea-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:840px){.idea-grid{grid-template-columns:1fr}}
+  .idea{border:1px solid var(--line);border-radius:6px;padding:28px;transition:border-color .2s, transform .2s}
+  .idea:hover{border-color:var(--ink);transform:translateY(-3px)}
+  .idea .where{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .idea h3{font-size:1.12rem;font-weight:700;letter-spacing:-.02em;margin:8px 0 8px}
+  .idea p{font-size:.88rem;color:var(--muted)}
+
+  /* platforms */
+  .tools{display:flex;flex-wrap:wrap;gap:10px}
+  .tool{border:1px solid var(--line);padding:10px 18px;border-radius:99px;font-size:.86rem;font-weight:500}
+
+  /* projects */
+  .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:840px){.proj-grid{grid-template-columns:1fr}}
+  .proj{border:1px solid var(--line);border-radius:6px;padding:30px 28px;text-decoration:none;display:block;transition:border-color .2s, transform .2s}
+  .proj:hover{border-color:var(--ink);transform:translateY(-3px)}
+  .proj .tag{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .proj h3{font-size:1.16rem;font-weight:700;letter-spacing:-.02em;margin:8px 0 8px}
+  .proj p{font-size:.88rem;color:var(--muted)}
+  .proj .url{display:inline-block;margin-top:14px;font-size:.8rem;font-weight:600;border-bottom:1px solid var(--ink)}
+
+  /* samples */
+  .sample-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:840px){.sample-grid{grid-template-columns:1fr}}
+  .sample{border:1px dashed #C9C9C2;border-radius:6px;overflow:hidden}
+  .sample .thumb{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-size:.78rem;line-height:1.5;color:var(--muted);background:#F3F3EF}
+  .sample .info{padding:16px 20px;border-top:1px dashed #C9C9C2}
+  .sample .tag{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .sample h3{font-size:.98rem;font-weight:600;margin-top:4px}
+
+  /* why */
+  .why p{max-width:660px;font-size:clamp(1.1rem,2.2vw,1.45rem);font-weight:500;letter-spacing:-.015em;line-height:1.5;margin-bottom:20px}
+  .why p b{color:var(--accent);font-weight:600}
+  .why .small{font-size:.95rem;color:var(--muted);font-weight:400;max-width:620px}
+
+  /* contact */
+  .contact{padding:110px 0 90px}
+  .contact h2{font-size:clamp(2.2rem,5.4vw,3.8rem);letter-spacing:-.04em;max-width:17ch;margin-bottom:30px}
+  .contact h2 em{font-style:italic;font-weight:500;color:var(--accent)}
+  .mail{font-size:clamp(1.1rem,2.6vw,1.6rem);font-weight:600;letter-spacing:-.02em;text-decoration:none;border-bottom:2px solid var(--accent)}
+  .contact-list{display:flex;gap:26px;flex-wrap:wrap;margin-top:44px;font-size:.86rem;color:var(--muted)}
+  .contact-list a{text-decoration:none;border-bottom:1px solid var(--line)}
+  .contact-list a:hover{border-color:var(--ink);color:var(--ink)}
+  footer{border-top:1px solid var(--line);padding:24px 0;font-size:.76rem;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="logo" href="#top">Minh Thư<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#story">Why community</a></li>
+      <li><a href="#xp">Experience</a></li>
+      <li><a href="#ideas">Ideas for ScoreX</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="badge" href="#contact">Open to: Community Builder Intern</a>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div class="kicker"><b>Nguyễn Minh Thư</b> — Hanoi, Vietnam</div>
+    <h1>I keep English-learning communities <em>warm.</em></h1>
+    <p class="hero-sub">
+      Final-year student at <b>ULIS – Vietnam National University</b> who has worked across
+      <b>three English-education environments</b> — a kindergarten, a corporate training program,
+      and an IELTS center. One lesson holds everywhere: learners stay for the feeling of
+      <b>being accompanied</b>, not for the ads.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="mailto:onghoaleulis@gmail.com">Say hello</a>
+      <!-- [EDIT] đổi thành link Google Drive chứa CV PDF -->
+      <a class="btn btn-ghost" href="#">Download CV</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/minh-th%C6%B0-nguy%E1%BB%85n-95a494408/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>3</b>education workplaces</div>
+      <div><b>4+</b>social platforms used daily</div>
+      <div><b>3</b>languages — VN · EN · RU</div>
+    </div>
+  </div>
+</header>
+
+<section id="story">
+  <div class="wrap">
+    <div class="label reveal"><i>01</i>Why community</div>
+    <h2 class="reveal">Communities don't grow from content. They grow from care.</h2>
+    <div class="story-grid">
+      <div class="story reveal">
+        <p>
+          I started as a <b>teaching assistant for kindergarteners</b> — where I learned to hold the
+          attention of the world's toughest audience with language mini-games.
+        </p>
+        <p>
+          Then came <b>business-English classes for Viettel Networks staff</b> — busy professionals
+          whose motivation needed re-warming every single week.
+        </p>
+        <p>
+          Most recently, at <b>EASYIELTS (HOCMAI × GALAXY Education)</b>, I made dozens of
+          consultation calls and heard the real worries of IELTS learners: <em>lost basics, fear of
+          Speaking, plateaued band scores</em>. I saw the exact moment a learner decides to enroll —
+          it's when they feel <b>someone finally understands them</b>.
+        </p>
+        <p>
+          That, to me, is the Community Builder job at ScoreX: creating a space where people ask
+          without fear of judgment, have fun while actually learning, and <b>trust the center before
+          they ever buy a course</b>.
+        </p>
+      </div>
+      <div class="journey reveal">
+        <h3>The journey so far</h3>
+        <div class="j-step"><span class="n">/ 01</span><div><b>Popodoo Kindergarten</b><span>Engagement through language mini-games — since 2023</span></div></div>
+        <div class="j-step"><span class="n">/ 02</span><div><b>Educa × Viettel Networks</b><span>Accompanying busy adult learners — 2025</span></div></div>
+        <div class="j-step"><span class="n">/ 03</span><div><b>EASYIELTS (HOCMAI × GALAXY)</b><span>Consulting, care &amp; learner data — 2026</span></div></div>
+        <div class="j-step"><span class="n">/ 04</span><div><b>ScoreX — next?</b><span>Building a serious yet warm learning community</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="xp">
+  <div class="wrap">
+    <div class="label reveal"><i>02</i>Experience</div>
+    <h2 class="reveal">Relevant experience</h2>
+    <div class="xp-row reveal">
+      <div class="xp-date">Feb – May 2026</div>
+      <div>
+        <h3>Telesales &amp; Data Assistant</h3>
+        <div class="xp-org">EASYIELTS — Hybrid IELTS Center (HOCMAI × GALAXY Education)</div>
+        <ul>
+          <li>Consulted &amp; supported IELTS learners by phone — <b>deep exposure to learner insights</b></li>
+          <li>Managed customer data and <b>tracked operational performance metrics</b></li>
+          <li>Ran follow-ups that <b>supported enrollment &amp; conversion</b></li>
+        </ul>
+        <div class="fit">Maps to JD — listen to feedback → optimize experience → drive conversion</div>
+      </div>
+    </div>
+    <div class="xp-row reveal">
+      <div class="xp-date">2025</div>
+      <div>
+        <h3>Teaching Assistant — Business English</h3>
+        <div class="xp-org">Educa — training program for Viettel Networks staff</div>
+        <ul>
+          <li>Supported English training sessions for <b>working professionals</b></li>
+          <li>Coordinated classes with instructors; gave <b>individual communication feedback</b></li>
+        </ul>
+        <div class="fit">Maps to JD — answer questions, keep the learning space positive</div>
+      </div>
+    </div>
+    <div class="xp-row reveal">
+      <div class="xp-date">2024 – 2025</div>
+      <div>
+        <h3>Sales Collaborator</h3>
+        <div class="xp-org">Hanoi University of Education Bookstore</div>
+        <ul>
+          <li>Served customers — mostly <b>students and parents</b></li>
+          <li>Handled daily operations, learning materials and inventory</li>
+        </ul>
+        <div class="fit">Maps to JD — support center operations</div>
+      </div>
+    </div>
+    <div class="xp-row reveal">
+      <div class="xp-date">Nov 2023</div>
+      <div>
+        <h3>Teaching Assistant</h3>
+        <div class="xp-org">Popodoo Kindergarten</div>
+        <ul>
+          <li>Designed and ran <b>language-learning games</b> and classroom activities</li>
+          <li>Prepared visual learning materials (flashcards, posters)</li>
+        </ul>
+        <div class="fit">Maps to JD — mini-games that keep engagement high</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ideas">
+  <div class="wrap">
+    <div class="label reveal"><i>03</i>Ideas</div>
+    <h2 class="reveal">Four things I'd love to test at ScoreX</h2>
+    <div class="idea-grid">
+      <div class="idea reveal">
+        <div class="where">Facebook Group</div>
+        <h3>"No-judgment IELTS questions"</h3>
+        <p>A pinned weekly thread for the most basic questions. Beginners' biggest fear is being
+        laughed at — remove that fear and the community earns trust. Trust is step zero of
+        conversion.</p>
+      </div>
+      <div class="idea reveal">
+        <div class="where">TikTok / Reels</div>
+        <h3>"Guess the band — 15s Speaking"</h3>
+        <p>Short clip: hear one Speaking answer, the community guesses the band, a ScoreX teacher
+        reveals it with one tip. Repeatable format, shareable, funnels viewers into the group.</p>
+      </div>
+      <div class="idea reveal">
+        <div class="where">Zalo / Discord</div>
+        <h3>"7 days, 7 collocations" check-in</h3>
+        <p>A mini-challenge with a simple leaderboard; finishers get tagged in a weekend shout-out.
+        A daily habit gives members a reason to open the group every day.</p>
+      </div>
+      <div class="idea reveal">
+        <div class="where">Whole ecosystem</div>
+        <h3>"Real band-up stories"</h3>
+        <p>Interviews with ScoreX learners who just hit their target — told in their own voice, no
+        sugar-coating. Authentic social proof that matches ScoreX's "serious companionship"
+        positioning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="label reveal"><i>04</i>Platforms &amp; tools</div>
+    <h2 class="reveal">Where I live online</h2>
+    <div class="tools reveal">
+      <div class="tool">Facebook Groups</div>
+      <div class="tool">Zalo</div>
+      <div class="tool">TikTok</div>
+      <div class="tool">Discord</div>
+      <div class="tool">Threads</div>
+      <div class="tool">Canva</div>
+      <div class="tool">CapCut — mobile editing</div>
+      <div class="tool">ChatGPT</div>
+      <div class="tool">Claude — Code · Cowork · Design</div>
+      <div class="tool">Microsoft Office · Google Workspace</div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="label reveal"><i>05</i>Projects</div>
+    <h2 class="reveal">Products I'm currently working on</h2>
+    <div class="proj-grid">
+      <a class="proj reveal" href="https://techieslab.app/" target="_blank" rel="noopener">
+        <div class="tag">Live product</div>
+        <h3>Techies Lab</h3>
+        <!-- [EDIT] mô tả đúng vai trò của bạn trong dự án -->
+        <p>Marketing Accountant — tracking marketing budget &amp; campaign spending across channels,
+        coordinating with the content team on growth campaigns. [EDIT: thêm chi tiết nếu muốn]</p>
+        <span class="url">techieslab.app ↗</span>
+      </a>
+      <a class="proj reveal" href="https://antibot-landing-page-sit-302652974086.asia-southeast1.run.app/login" target="_blank" rel="noopener">
+        <div class="tag">SaaS landing page</div>
+        <h3>Antibot</h3>
+        <!-- [EDIT] mô tả vai trò + khi có link production public thì thay link staging này -->
+        <p>[EDIT] Supporting content &amp; marketing for a SaaS landing page — describe your role.
+        (Note: replace this staging link with the public URL once live.)</p>
+        <span class="url">View project ↗</span>
+      </a>
+    </div>
+    <div class="sample-grid" style="margin-top:20px">
+      <!-- [EDIT] Thay 3 placeholder bằng sản phẩm thật: 1 post kiến thức IELTS trên Canva,
+           1 clip tip tiếng Anh quay điện thoại, 1 screenshot hoạt động cộng đồng của bạn. -->
+      <div class="sample reveal">
+        <div class="thumb">[EDIT] Ảnh 1 bài post kiến thức<br>bạn thiết kế trên Canva</div>
+        <div class="info"><div class="tag">Content design</div><h3>[Tên sample]</h3></div>
+      </div>
+      <div class="sample reveal">
+        <div class="thumb">[EDIT] Thumbnail + link 1 clip<br>bạn tự quay &amp; dựng</div>
+        <div class="info"><div class="tag">Short video</div><h3>[Tên sample]</h3></div>
+      </div>
+      <div class="sample reveal">
+        <div class="thumb">[EDIT] Screenshot hoạt động cộng đồng<br>(bài đăng / mini-game bạn tổ chức)</div>
+        <div class="info"><div class="tag">Community</div><h3>[Tên sample]</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="label reveal"><i>06</i>Why ScoreX</div>
+    <h2 class="reveal">Learners aren't short of materials. They're short of company.</h2>
+    <div class="reveal">
+      <p>
+        ScoreX chose <b>not to be a mass exam-prep factory</b> — companionship and academic quality
+        come first. That's exactly what I found missing when consulting IELTS learners.
+      </p>
+      <p class="small">
+        Community is where that companionship happens daily. I want to be trained properly in
+        Community Management &amp; Content Marketing here — and in return, bring persistence,
+        initiative, and real experience with English learners across three age groups.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="reveal">Let's build a community learners <em>come back to every day.</em></h2>
+    <a class="mail reveal" href="mailto:onghoaleulis@gmail.com">onghoaleulis@gmail.com</a>
+    <!-- [EDIT] nên tạo email mới dạng họ tên (VD: thu.nguyenminh.work@gmail.com) rồi thay ở đây + CV -->
+    <div class="contact-list reveal">
+      <span>Phone — 0879 130 613</span>
+      <span>Zalo — 0859 130 613</span>
+      <a href="https://www.linkedin.com/in/minh-th%C6%B0-nguy%E1%BB%85n-95a494408/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <span>Cầu Giấy, Hà Nội — near ScoreX's Yên Hòa office</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Nguyễn Minh Thư</span>
+    <span>Community Builder — ScoreX · Cốc Cốc ecosystem</span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

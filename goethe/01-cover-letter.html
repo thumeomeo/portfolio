@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cover Letter — Goethe-Institut Hà Nội</title>
+<!-- ⚠️ Thay toàn bộ các ô gạch xanh [ ... ] bằng thông tin thật trước khi xuất PDF -->
+<style>
+  :root{
+    --paper:#F4FFFC; --mint:#91EAAF; --lime:#C3E956; --olive:#4D7111; --forest:#1F4B2C;
+    --glass:rgba(244,255,252,.66); --glass2:rgba(244,255,252,.82); --stroke:rgba(255,255,255,.55);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-family:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--forest);background:#173d24}
+  @media screen{ body{display:flex;flex-direction:column;align-items:center;gap:28px;padding:36px 12px} .page{box-shadow:0 24px 60px rgba(0,0,0,.4)} }
+  .screen-note{max-width:210mm;width:100%;background:var(--forest);color:var(--paper);border-radius:12px;padding:10px 16px;font-size:13px}
+  .screen-note b{color:var(--lime)}
+  .page{width:210mm;height:296.6mm;position:relative;overflow:hidden;border-radius:0;
+    background:
+      radial-gradient(58% 42% at 10% 6%, rgba(195,233,86,.85), transparent 62%),
+      radial-gradient(50% 40% at 92% 12%, rgba(31,75,44,.92), transparent 65%),
+      radial-gradient(65% 55% at 82% 88%, rgba(77,113,17,.88), transparent 62%),
+      radial-gradient(45% 40% at 18% 92%, rgba(31,75,44,.9), transparent 60%),
+      linear-gradient(128deg,#8DB63C 0%,#5D8F27 38%,#2E6B33 72%,#1F4B2C 100%);}
+  .page::before{content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 1px,transparent 1px 26px),
+               repeating-linear-gradient(-45deg,rgba(255,255,255,.05) 0 1px,transparent 1px 26px)}
+  .wrap{position:relative;z-index:1;height:100%;padding:13mm;display:flex;flex-direction:column;gap:5mm}
+  .glass{background:var(--glass);border:1px solid var(--stroke);border-radius:18px;
+    box-shadow:0 10px 30px rgba(15,40,20,.18), inset 0 1px 0 rgba(255,255,255,.6);
+    -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+  .ph{background:rgba(195,233,86,.45);border-bottom:1.5px dashed var(--olive);border-radius:3px;padding:0 3px;font-weight:600}
+  header.glass{display:flex;justify-content:space-between;align-items:center;padding:6mm 9mm}
+  h1{font-size:23pt;font-weight:800;letter-spacing:-.02em;line-height:1}
+  .role{color:var(--olive);font-weight:700;font-size:10.5pt;margin-top:2mm;text-transform:uppercase;letter-spacing:.14em}
+  .contact{text-align:right;font-size:9pt;line-height:1.6}
+  .contact b{color:var(--olive)}
+  .letter{flex:1;padding:7mm 9mm;font-size:9.9pt;line-height:1.52;display:flex;flex-direction:column}
+  .date{text-align:right;font-style:italic;margin-bottom:3.5mm}
+  .to{font-size:9.5pt;line-height:1.5;margin-bottom:3.5mm}
+  .to b{font-size:10.2pt}
+  .subject{font-weight:800;font-size:10.8pt;margin-bottom:4mm;padding:2.4mm 3.5mm;background:rgba(195,233,86,.5);border-left:4px solid var(--olive);border-radius:6px}
+  p{margin-bottom:3.2mm;text-align:justify}
+  .sig{margin-top:3mm}
+  .sig .name{font-size:13pt;font-weight:800;margin-top:6mm}
+  .enclosures{margin-top:auto;padding-top:2.5mm;border-top:1px solid rgba(77,113,17,.35);font-size:8.6pt;color:var(--olive)}
+  footer{display:flex;justify-content:space-between;align-items:center;padding:0 2mm;color:var(--paper);font-size:8.5pt;letter-spacing:.06em}
+  .dots{display:flex;gap:6px}
+  .dots span{width:11px;height:11px;border-radius:50%;border:1px solid rgba(255,255,255,.7);display:inline-block}
+  @media print{
+    @page{size:A4;margin:0}
+    body{background:none;display:block;padding:0}
+    .page{page-break-after:always;box-shadow:none}
+    .page:last-child{page-break-after:auto}
+    .screen-note{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="screen-note">✅ <b>Đã điền thông tin thật.</b> Còn 1 ô: <span class="ph">[link portfolio sau khi host]</span> - điền xong chạy <b>build-pdfs.ps1</b>.</div>
+
+<div class="page">
+  <div class="wrap">
+    <header class="glass">
+      <div>
+        <h1>Nguyễn Minh Thư</h1>
+        <div class="role">Applicant · Cultural Programmes Internship</div>
+      </div>
+      <div class="contact">
+        <div><b>☎</b> 0879 130 613</div>
+        <div><b>✉</b> ngminhthumui@gmail.com</div>
+        <div><b>⌂</b> Cầu Giấy, Hà Nội</div>
+        <div><b>↗</b> <span class="ph">[link portfolio sau khi host]</span></div>
+      </div>
+    </header>
+
+    <div class="glass letter">
+      <div class="date">Hanoi, 11 July 2026</div>
+      <div class="to">
+        <b>Cultural Programmes Department (Phòng Văn hóa)</b><br>
+        Goethe-Institut Hà Nội<br>
+        56-58 Nguyễn Thái Học, Ba Đình, Hà Nội
+      </div>
+      <div class="subject">Subject: Application for Internship - Cultural Programmes Department (6 months)</div>
+
+      <p>Dear Madam or Sir,</p>
+
+      <p>I am writing to apply for the internship in the Cultural Programmes Department at Goethe-Institut Hà Nội, for a duration of six months. I am currently a final-year student in Russian Language and Culture at the University of Languages and International Studies (ULIS) - Vietnam National University, Hanoi.</p>
+
+      <p>Since 2023 I have worked hands-on with very different audiences: running language-learning games for young children at Popodoo Kindergarten, assisting business-English training sessions for Viettel Networks staff with Educa, serving students at the Hanoi University of Education bookstore, and handling consultation calls and customer data at EASYIELTS, where I tracked performance metrics and produced weekly reports. On campus, I help organize faculty events: the annual ULIS Job Fair, the "From Hanoi to Moscow" gala and the Russian faculty's "Golden Bell" contest. Alongside my studies I currently work as Marketing Accountant at Techies Lab, tracking campaign budgets and coordinating with the production, sales and marketing teams. These roles taught me to listen to an audience first, organise the practical details around them, and report honestly on what worked - habits I believe transfer directly to cultural programme work.</p>
+
+      <p>What draws me to the Cultural Programmes Department is the way Goethe-Institut Hà Nội's programmes - film, music, exhibitions and public dialogue - bring German and Vietnamese audiences together. I would like to learn how such programmes are planned, produced and communicated from the inside, and to support the team with careful research, writing in Vietnamese and English, on-site assistance and tidy documentation. I have not yet studied German, but I am committed to starting a German course alongside the internship.</p>
+
+      <p>I am available full-time for six months, with a flexible start date. My CV, personal background sheet and portfolio are enclosed. I would be delighted to tell you more about my application in an interview. Thank you very much for your time and consideration.</p>
+
+      <div class="sig">
+        Yours sincerely,
+        <div class="name">Nguyễn Minh Thư</div>
+      </div>
+
+      <div class="enclosures"><b>Enclosures:</b> Curriculum Vitae · Personal Background Sheet · Portfolio</div>
+    </div>
+
+    <footer>
+      <div>APPLICATION · 07/2026</div>
+      <div class="dots">
+        <span style="background:#F4FFFC"></span><span style="background:#91EAAF"></span><span style="background:#C3E956"></span><span style="background:#4D7111"></span><span style="background:#1F4B2C"></span>
+      </div>
+      <div>GOETHE-INSTITUT HÀ NỘI · CULTURAL PROGRAMMES</div>
+    </footer>
+  </div>
+</div>
+</body>
+</html>
