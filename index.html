@@ -281,16 +281,16 @@
     background:radial-gradient(closest-side,rgba(31,75,44,.22),transparent 70%);
   }
   .car-inner{
-    --w:150px;--h:198px;
-    --quantity:8;
-    --translateZ:calc((var(--w) + var(--h)) * .62);
-    --rotateX:-11deg;
-    --perspective:1100px;
+    --w:150px;--h:188px;
+    --quantity:10;
+    --translateZ:342px;
+    --rotateX:-9deg;
+    --perspective:1300px;
     position:absolute;width:var(--w);height:var(--h);
-    top:calc(50% - (var(--h) / 2) - 14px);left:calc(50% - (var(--w) / 2));
+    top:calc(50% - (var(--h) / 2) - 12px);left:calc(50% - (var(--w) / 2));
     z-index:2;transform-style:preserve-3d;
     transform:perspective(var(--perspective));
-    animation:rotating 26s linear infinite;
+    animation:rotating 36s linear infinite;
   }
   .carousel-stage:hover .car-inner,
   .carousel-stage:hover .t-card{animation-play-state:paused}
@@ -299,46 +299,44 @@
     to{transform:perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(1turn)}
   }
   /* fade in/out synced to the spin - card is bright at the front, dims toward the back */
-  @keyframes cardFade{0%,100%{opacity:1}50%{opacity:.12}}
+  @keyframes cardFade{0%,100%{opacity:1}50%{opacity:.16}}
   .t-card{
-    position:absolute;inset:0;border-radius:18px;overflow:hidden;
+    position:absolute;inset:0;border-radius:22px;overflow:hidden;
     transform:rotateY(calc((360deg / var(--quantity)) * var(--index))) translateZ(var(--translateZ));
     backface-visibility:hidden;-webkit-backface-visibility:hidden;
-    animation:cardFade 26s linear infinite;
-    animation-delay:calc(var(--index) / var(--quantity) * -26s);
-    background:linear-gradient(168deg,rgba(244,255,252,.95) 0%,rgba(228,248,238,.82) 100%);
+    animation:cardFade 36s linear infinite;
+    animation-delay:calc(var(--index) / var(--quantity) * -36s);
+    background:linear-gradient(155deg,rgba(255,255,255,.72) 0%,rgba(230,248,238,.5) 100%);
+    -webkit-backdrop-filter:blur(12px) saturate(1.25);backdrop-filter:blur(12px) saturate(1.25);
     border:1.5px solid rgba(255,255,255,.9);
-    box-shadow:0 16px 36px rgba(8,26,14,.24),inset 0 1px 0 #fff;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;
-    padding:18px 14px;text-align:center;
+    box-shadow:0 22px 48px rgba(8,26,14,.26),inset 0 1px 0 rgba(255,255,255,.95);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+    padding:22px 16px;text-align:center;
   }
   .t-card::before{content:"";position:absolute;inset:0;
-    background:radial-gradient(70% 55% at 50% 0%,rgba(195,233,86,.28),transparent 70%)}
+    background:radial-gradient(80% 60% at 50% 0%,rgba(195,233,86,.3),transparent 72%)}
   .t-card .t-ic{
-    position:relative;width:46px;height:46px;border-radius:14px;flex:0 0 auto;
+    position:relative;width:54px;height:54px;border-radius:16px;flex:0 0 auto;
     background:var(--forest);color:var(--lime);
     display:flex;align-items:center;justify-content:center;
-    box-shadow:0 8px 18px rgba(31,75,44,.35);
+    box-shadow:0 10px 22px rgba(31,75,44,.38);
   }
-  .t-card .t-ic svg{width:23px;height:23px}
-  .t-card b{position:relative;font-size:.86rem;font-weight:800;letter-spacing:-.01em;color:var(--forest);line-height:1.3}
-  .t-card small{position:relative;font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--olive)}
+  .t-card .t-ic svg{width:27px;height:27px}
+  .t-card b{position:relative;font-size:.95rem;font-weight:800;letter-spacing:-.01em;color:var(--forest);line-height:1.28}
   .t-card.star{
-    background:linear-gradient(168deg,var(--forest) 0%,#153521 100%);
-    border-color:rgba(195,233,86,.75);
+    background:linear-gradient(155deg,rgba(31,75,44,.93) 0%,rgba(21,53,33,.9) 100%);
+    border-color:rgba(195,233,86,.7);
   }
-  .t-card.star::before{background:radial-gradient(70% 55% at 50% 0%,rgba(195,233,86,.35),transparent 70%)}
-  .t-card.star .t-ic{background:var(--lime);color:var(--forest);box-shadow:0 8px 18px rgba(195,233,86,.4)}
+  .t-card.star::before{background:radial-gradient(80% 60% at 50% 0%,rgba(195,233,86,.4),transparent 72%)}
+  .t-card.star .t-ic{background:var(--lime);color:var(--forest);box-shadow:0 10px 22px rgba(195,233,86,.45)}
   .t-card.star b{color:var(--paper)}
-  .t-card.star small{color:var(--mint)}
   @media(max-width:640px){
-    .carousel-stage{height:300px}
-    .car-inner{--w:112px;--h:152px;--rotateX:-9deg}
-    .t-card{gap:9px;padding:12px 10px;border-radius:14px}
-    .t-card .t-ic{width:36px;height:36px;border-radius:11px}
-    .t-card .t-ic svg{width:18px;height:18px}
-    .t-card b{font-size:.7rem}
-    .t-card small{font-size:.54rem}
+    .carousel-stage{height:330px}
+    .car-inner{--w:128px;--h:160px;--translateZ:232px;--rotateX:-7deg;--perspective:960px}
+    .t-card{gap:13px;padding:15px 11px;border-radius:17px}
+    .t-card .t-ic{width:44px;height:44px;border-radius:13px}
+    .t-card .t-ic svg{width:22px;height:22px}
+    .t-card b{font-size:.8rem}
   }
 
   /* about */
@@ -453,6 +451,10 @@
     *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
     html{scroll-behavior:auto}
     .reveal,.reveal-pop,.hero-load{opacity:1;transform:none}
+    /* keep the signature motion of the portfolio alive even under reduce-motion */
+    .car-inner{animation-duration:26s !important;animation-iteration-count:infinite !important}
+    .t-card{animation-duration:26s !important;animation-iteration-count:infinite !important}
+    .marquee-track{animation-duration:32s !important;animation-iteration-count:infinite !important}
   }
 </style>
 </head>
@@ -469,8 +471,7 @@
       <a class="logo" href="#top">Minh Thư<span>.</span></a>
       <ul class="nav-links">
         <li><a href="#hi">About</a></li>
-        <li><a href="#work">Selected work</a></li>
-        <li><a href="#process">How I work</a></li>
+        <li><a href="#work">Experience</a></li>
         <li><a href="#toolbox">Toolbox</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -479,8 +480,7 @@
     </div>
     <div class="mobile-menu" id="mobileMenu">
       <a href="#hi">About</a>
-      <a href="#work">Selected work</a>
-      <a href="#process">How I work</a>
+      <a href="#work">Experience</a>
       <a href="#toolbox">Toolbox</a>
       <a href="#contact">Contact</a>
       <a class="m-badge" href="mailto:ngminhthumui@gmail.com">Get in touch</a>
@@ -491,11 +491,11 @@
 <header id="top">
   <div class="wrap">
     <div class="kicker hero-load" style="--d:.05s"><i></i>Nguyễn Minh Thư · Hanoi, Vietnam</div>
-    <h1 class="hero-load" style="--d:.15s">I find the creators who convert, book the collaborations that scale, and back <em>every move with data.</em></h1>
+    <h1 class="hero-load" style="--d:.15s">I find the right people, run the outreach, and back <em>every decision with data.</em></h1>
     <p class="hero-sub hero-load" style="--d:.3s">
-      Final-year student of <b>Russian Language &amp; Culture at ULIS - Vietnam National University</b>,
-      running growth campaigns for a SaaS product: community research, high-volume outreach,
-      bilingual content planning and spreadsheet-first performance tracking.
+      Final-year student at <b>ULIS - Vietnam National University, Hanoi</b>, working across
+      marketing, community and operations - research, high-volume outreach, bilingual (EN/VI)
+      content and data-driven reporting.
     </p>
     <div class="hero-cta hero-load" style="--d:.45s">
       <a class="btn btn-solid magnetic" href="mailto:ngminhthumui@gmail.com">Contact me</a>
@@ -542,52 +542,42 @@
       <div class="t-card star" style="--index:0">
         <span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
         <b>Learning &amp; adapting fast</b>
-        <small>Trait 01</small>
       </div>
       <div class="t-card" style="--index:1">
         <span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></span>
         <b>Detail-oriented</b>
-        <small>Trait 02</small>
       </div>
       <div class="t-card" style="--index:2">
         <span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6" rx="1"/><rect x="12" y="8" width="3" height="10" rx="1"/><rect x="17" y="5" width="3" height="13" rx="1"/></svg></span>
         <b>Data-driven</b>
-        <small>Trait 03</small>
       </div>
       <div class="t-card" style="--index:3">
         <span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></span>
         <b>Proactive &amp; self-driven</b>
-        <small>Trait 04</small>
       </div>
       <div class="t-card" style="--index:4">
         <span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
         <b>Clear communicator</b>
-        <small>Trait 05</small>
       </div>
       <div class="t-card" style="--index:5">
         <span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
         <b>Built for high volume</b>
-        <small>Trait 06</small>
       </div>
       <div class="t-card" style="--index:6">
         <span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
         <b>Team player</b>
-        <small>Trait 07</small>
       </div>
       <div class="t-card" style="--index:7">
         <span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></span>
         <b>Endlessly curious</b>
-        <small>Trait 08</small>
       </div>
       <div class="t-card" style="--index:8">
         <span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
         <b>Growth-mindset</b>
-        <small>Trait 09</small>
       </div>
       <div class="t-card" style="--index:9">
         <span class="t-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.1 14c.2-1 .7-1.7 1.4-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.8 1.2 1.5 1.4 2.5"/></svg></span>
         <b>Creative</b>
-        <small>Trait 10</small>
       </div>
     </div>
   </div>
@@ -608,10 +598,9 @@
         <b>listen first, then say the thing that lands.</b>
       </p>
       <p class="reveal" style="--d:.1s">
-        In 2026 I brought that into growth work for <b>Antibot, a SaaS product</b> - mapping 125 online
-        communities and reading each one's rules before a single post went out, planning a bilingual
-        content calendar, writing short-video scripts, and logging every post, comment and reply into
-        trackers the whole team could trust. High-volume, detail-heavy, deadline-driven -
+        Since then I've worked across <b>marketing, community and operations</b> - finding the right
+        channels, reaching out at volume, planning bilingual content, and keeping every result in
+        trackers a whole team can rely on. High-volume, detail-heavy, deadline-driven -
         <i>exactly the kind of work I enjoy.</i>
       </p>
       <div class="facts reveal" style="--d:.2s">
@@ -625,36 +614,32 @@
 </section>
 
 <section id="work">
-  <div class="label reveal"><i>02</i>Selected work</div>
-  <h2 class="reveal">Campaigns and desks where I <em>learned by doing</em></h2>
+  <div class="label reveal"><i>02</i>Selected work &amp; experience</div>
+  <h2 class="reveal">Where I <em>learned by doing</em></h2>
   <div class="proj-grid">
     <div class="proj full tilt reveal">
-      <div class="tag">SaaS · Community growth · 2026 - present</div>
-      <h3>Antibot - Reddit &amp; Threads growth campaign</h3>
+      <div class="tag">Marketing · Business development · 2026 - present</div>
+      <h3>Techies Lab - Antibot (SaaS product)</h3>
       <p>
-        End-to-end campaign operations for an anti-bot SaaS. I mapped and scored <b>125 subreddits</b>,
-        built a <b>per-community rules matrix</b> so every post stayed compliant, and ran a weekly
-        <b>bilingual (EN/VI) content calendar</b> across brand and founder accounts. I wrote
-        <b>two TikTok-format video scripts</b> (hook-setup-payoff, under 45 seconds), drafted the
-        <b>Product Hunt launch plan</b>, and reviewed performance weekly - adjusting posting cadence
-        and link timing based on what the numbers said, not what we hoped.
+        End-to-end marketing for Antibot - content, design and SEO - plus <b>business development</b>
+        and outreach to overseas partners and customers. I researched <b>125+ online communities</b> to
+        find the right channels, ran a weekly <b>bilingual (EN/VI) content calendar</b>, built the
+        performance-tracking system, and shaped the go-to-market plan to launch on <b>Product Hunt</b>.
       </p>
       <div class="chips">
-        <span class="chip hl">125 communities mapped</span>
-        <span class="chip">5 tracking spreadsheets</span>
-        <span class="chip">2 platforms, EN/VI</span>
-        <span class="chip">2 short-video scripts</span>
-        <span class="chip">Weekly performance reviews</span>
+        <span class="chip hl">125+ communities researched</span>
+        <span class="chip">Bilingual EN/VI content</span>
+        <span class="chip">Performance tracking</span>
+        <span class="chip">Product Hunt launch</span>
       </div>
     </div>
     <div class="proj tilt reveal">
       <div class="tag">EdTech · Outreach &amp; data · Feb-May 2026</div>
-      <h3>EASYIELTS - high-volume consultation desk</h3>
+      <h3>EASYIELTS - Telesales &amp; Data Assistant</h3>
       <p>
         Daily outbound consultation and follow-up calls for a hybrid IELTS center
-        (HOCMAI × GALAXY Education). I managed <b>learner data and follow-up pipelines in
-        spreadsheets</b>, produced weekly reports, and learned first-hand what makes hesitant
-        people say yes - and how to hear "no" a dozen times before lunch and keep going.
+        (HOCMAI × GALAXY Education). Managed learner records and follow-up pipelines,
+        and produced weekly performance reports.
       </p>
       <div class="chips">
         <span class="chip">Daily outbound calls</span>
@@ -662,57 +647,46 @@
         <span class="chip">Weekly reporting</span>
       </div>
     </div>
-    <div class="proj tilt reveal" style="--d:.12s">
-      <div class="tag">Tech · Marketing ops · 2026 - present</div>
-      <h3>Techies Lab - marketing spend tracking</h3>
+    <div class="proj tilt reveal" style="--d:.06s">
+      <div class="tag">Corporate training · 2025</div>
+      <h3>Educa - Business English for Viettel Networks</h3>
       <p>
-        Tracking and reconciling <b>marketing budget and campaign spending across channels</b> for
-        techieslab.app, preparing spending reports and coordinating with production, sales and
-        marketing teams - so every campaign decision starts from numbers people can trust.
+        Teaching assistant for Business English training for working professionals - ran speaking
+        practice, gave individual feedback, and prepared lesson materials.
       </p>
       <div class="chips">
-        <span class="chip">Multi-channel budgets</span>
-        <span class="chip">Spending reports</span>
-        <span class="chip">Cross-team coordination</span>
+        <span class="chip">Corporate learners</span>
+        <span class="chip">Speaking practice</span>
+      </div>
+    </div>
+    <div class="proj tilt reveal" style="--d:.12s">
+      <div class="tag">Retail &amp; events · 2024 - 2025</div>
+      <h3>Hanoi University of Education Bookstore</h3>
+      <p>
+        Operations &amp; events assistant - supported daily store operations, sales and inventory,
+        and helped organize on-site book-fair events.
+      </p>
+      <div class="chips">
+        <span class="chip">Store operations</span>
+        <span class="chip">Book-fair events</span>
+      </div>
+    </div>
+    <div class="proj tilt reveal" style="--d:.18s">
+      <div class="tag">Education · 2023</div>
+      <h3>Popodoo Kindergarten - Teaching Assistant</h3>
+      <p>
+        Ran language-learning activities for young learners and prepared visual teaching materials.
+      </p>
+      <div class="chips">
+        <span class="chip">Young learners</span>
+        <span class="chip">Classroom activities</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="process">
-  <div class="label reveal"><i>03</i>How I work</div>
-  <h2 class="reveal">One loop, run <em>every single week</em></h2>
-  <div class="steps">
-    <div class="step reveal-pop">
-      <div class="s-num">01</div>
-      <h3>Research</h3>
-      <p>Find where the right people already are - and read the room before entering it.</p>
-    </div>
-    <div class="step reveal-pop" style="--d:.08s">
-      <div class="s-num">02</div>
-      <h3>Qualify</h3>
-      <p>Score and shortlist against clear criteria. Every candidate gets a row, no exceptions.</p>
-    </div>
-    <div class="step reveal-pop" style="--d:.16s">
-      <div class="s-num">03</div>
-      <h3>Reach out</h3>
-      <p>Personal, platform-native messages at volume - never copy-paste blasts.</p>
-    </div>
-    <div class="step reveal-pop" style="--d:.24s">
-      <div class="s-num">04</div>
-      <h3>Track</h3>
-      <p>One row per touchpoint: status, reply, next action, result. Always current.</p>
-    </div>
-    <div class="step reveal-pop" style="--d:.32s">
-      <div class="s-num">05</div>
-      <h3>Iterate</h3>
-      <p>Weekly review of what the numbers say. Keep what worked, cut what didn't.</p>
-    </div>
-  </div>
-</section>
-
 <section id="toolbox">
-  <div class="label reveal"><i>04</i>Toolbox</div>
+  <div class="label reveal"><i>03</i>Toolbox</div>
   <h2 class="reveal">What I <em>work with daily</em></h2>
   <div class="tools">
     <span class="tool reveal-pop"><b>Google Sheets</b> - trackers &amp; dashboards</span>
@@ -731,8 +705,8 @@
 </section>
 
 <section class="contact" id="contact">
-  <div class="label reveal"><i>05</i>Contact</div>
-  <h2 class="reveal">Let's talk about communities, campaigns - <em>or spreadsheets.</em></h2>
+  <div class="label reveal"><i>04</i>Contact</div>
+  <h2 class="reveal">Open to internships and remote roles - <em>let's talk.</em></h2>
   <a class="mail reveal" href="mailto:ngminhthumui@gmail.com">ngminhthumui@gmail.com</a>
   <div class="contact-list reveal" style="--d:.1s">
     <a href="tel:+84879130613">(+84) 879 130 613</a>
@@ -805,7 +779,7 @@
   document.querySelectorAll('.cnt').forEach(function(el){ cio.observe(el); });
 
   /* active nav link */
-  var sections = ['hi','about','work','process','toolbox','contact'];
+  var sections = ['hi','about','work','toolbox','contact'];
   var links = document.querySelectorAll('.nav-links a, .mobile-menu a:not(.m-badge)');
   var sio = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
